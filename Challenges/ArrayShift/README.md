@@ -1,8 +1,8 @@
 # Insert and shift middle index of array
-Write a method called ArrayShift() which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
+Given an array of integers and a single integer, insert the single integer in the middle of the array.
 
 ## Challenge
-Given an array of integers and a single integer, insert the single integer in the middle of the array.
+Write a method called ArrayShift() which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 
 ## Solution
 Ex1
