@@ -12,3 +12,5 @@ output --> 2
 Ex 2 
 input --> [11,22,33,44,55,66,77], 90 
 output --> -1
+
+![White Board](https://github.com/chillbnel/Data-Structures-and-Algorithms/blob/master/assets/binary_search.jpg)
