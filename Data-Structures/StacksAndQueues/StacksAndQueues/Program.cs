@@ -13,6 +13,7 @@ namespace StacksAndQueues
             Node myNode4 = new Node(4);
             Node myNode5 = new Node(5);
 
+            Console.WriteLine("============= Queues =============");
             Queues myQueue = new Queues(myNode1);
             myQueue.Enqueue(myNode2);
             myQueue.Enqueue(myNode3);
@@ -28,18 +29,24 @@ namespace StacksAndQueues
                 Console.WriteLine(removedNode.Value);
             }
 
+            Console.WriteLine("============= Stacks =============");
             Stack myStack = new Stack(myNode1);
             myStack.Push(myNode2);
             myStack.Push(myNode3);
-
-            myStack.Pop();
-            Console.WriteLine($"First peek: {myStack.Peek().Value}");
+            myStack.Push(myNode4);
+            myStack.Push(myNode5);
 
             myStack.Pop();
             Console.WriteLine($"Second peek: {myStack.Peek().Value}");
 
             myStack.Pop();
             Console.WriteLine($"Third peek: {myStack.Peek().Value}");
+
+            myStack.Pop();
+            Console.WriteLine($"Fourth peek: {myStack.Peek().Value}");
+
+            myStack.Pop();
+            Console.WriteLine($"Fifth peek: {myStack.Peek().Value}");
         }
     }
 }
