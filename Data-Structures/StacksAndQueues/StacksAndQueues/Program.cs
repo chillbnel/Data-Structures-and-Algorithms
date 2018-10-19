@@ -1,4 +1,5 @@
 ﻿using System;
+using StacksAndQueues.Classes;
 
 namespace StacksAndQueues
 {
@@ -6,7 +7,39 @@ namespace StacksAndQueues
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Node myNode1 = new Node(1);
+            Node myNode2 = new Node(2);
+            Node myNode3 = new Node(3);
+            Node myNode4 = new Node(4);
+            Node myNode5 = new Node(5);
+
+            Queues myQueue = new Queues(myNode1);
+            myQueue.Enqueue(myNode2);
+            myQueue.Enqueue(myNode3);
+            myQueue.Enqueue(myNode4);
+            myQueue.Enqueue(myNode5);
+
+            for (int i =0; i < 5; i++)
+            {
+                Console.Write($"Peek #{i}: ");
+                Console.WriteLine($"{myQueue.Peek().Value}");
+
+                Node removedNode = myQueue.Dequeue();
+                Console.WriteLine(removedNode.Value);
+            }
+
+            Stack myStack = new Stack(myNode1);
+            myStack.Push(myNode2);
+            myStack.Push(myNode3);
+
+            myStack.Pop();
+            Console.WriteLine($"First peek: {myStack.Peek().Value}");
+
+            myStack.Pop();
+            Console.WriteLine($"Second peek: {myStack.Peek().Value}");
+
+            myStack.Pop();
+            Console.WriteLine($"Third peek: {myStack.Peek().Value}");
         }
     }
 }
