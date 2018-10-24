@@ -9,4 +9,9 @@ namespace FIFOAnimalShelter
             Console.WriteLine("Hello World!");
         }
     }
+
+    FIFOAnimalShelter()
+    {
+
+    }
 }

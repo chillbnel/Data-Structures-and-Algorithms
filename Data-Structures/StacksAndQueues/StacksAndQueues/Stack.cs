@@ -31,6 +31,8 @@ namespace StacksAndQueues
         //Push
         public void Push(Node node)
         {
+            node.Next = Top;
+            Top = node;
 
         }
 
