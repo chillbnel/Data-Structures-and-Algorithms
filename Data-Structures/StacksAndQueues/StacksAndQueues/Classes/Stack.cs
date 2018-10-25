@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StacksAndQueues
 {
-    class Stack
+     public class Stack
     {
         public Node Top { get; set; }
 
@@ -33,7 +33,10 @@ namespace StacksAndQueues
         {
             node.Next = Top;
             Top = node;
+<<<<<<< HEAD:Data-Structures/StacksAndQueues/StacksAndQueues/Stack.cs
 
+=======
+>>>>>>> b4afc0b5ae6cc0ea5490eb911cae95c316d1179a:Data-Structures/StacksAndQueues/StacksAndQueues/Classes/Stack.cs
         }
 
 
