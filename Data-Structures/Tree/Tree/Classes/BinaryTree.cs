@@ -36,6 +36,11 @@ namespace Tree.Classes
 
         }
 
+        /// <summary>
+        /// Depth first transversal using the in-order method
+        /// </summary>
+        /// <param name="root">the top node in a branch</param>
+        /// <returns>the transversed node</returns>
         public List<Node> InOrder(Node root)
         {
             if (root.LeftChild != null)
@@ -54,9 +59,27 @@ namespace Tree.Classes
 
         }
 
-        static void postOrder()
+
+        /// <summary>
+        /// Depth first transversal using the post-order method
+        /// </summary>
+        /// <param name="root">the top node in a branch</param>
+        /// <returns>the transversed node</returns>
+        public List<Node> PostOrder(Node root)
         {
 
+            if (root.LeftChild != null)
+            {
+                PreOrder(root.LeftChild);
+            }
+            if (root.RightChild != null)
+            {
+                PreOrder(root.RightChild);
+            }
+
+            nodes.Add(root);
+
+            return nodes;
         }
     }
 }
