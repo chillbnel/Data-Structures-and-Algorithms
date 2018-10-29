@@ -8,4 +8,4 @@ Without utilizing any of the built-in methods available to your language, determ
 C# directions: Instead of changing the values of the nodes, output to the console the new values respectively.
  
 ## Solution
-![White Board]https://github.com/chillbnel/Data-Structures-and-Algorithms/blob/master/assets/Challenge16.jpg)
+![White Board](https://github.com/chillbnel/Data-Structures-and-Algorithms/blob/master/assets/Challenge16.jpg)
