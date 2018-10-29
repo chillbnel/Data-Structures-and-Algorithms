@@ -22,6 +22,7 @@ namespace Tree.Classes
         public List<Node> PreOrder(Node root)
         {
             nodes.Add(root);
+
             if (root.LeftChild != null)
             {
                 PreOrder(root.LeftChild);
@@ -35,8 +36,21 @@ namespace Tree.Classes
 
         }
 
-        static void inOrder()
+        public List<Node> InOrder(Node root)
         {
+            if (root.LeftChild != null)
+            {
+                PreOrder(root.LeftChild);
+            }
+
+            nodes.Add(root);
+
+            if (root.RightChild != null)
+            {
+                PreOrder(root.RightChild);
+            }
+
+            return nodes;
 
         }
 
