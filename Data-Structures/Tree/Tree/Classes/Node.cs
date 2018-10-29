@@ -4,14 +4,17 @@ using System.Text;
 
 namespace Tree.Classes
 {
-    class Node
+    public class Node
     {
-        public object Value { get; set; } //changed from "int" to "object" to ensure that we're not bound to a certain type
-        public Node Next { get; set; }
+        public int Value { get; set; } //changed from "int" to "object" to ensure that we're not bound to a certain type
+        public Node LeftChild { get; set; }
+        public Node RightChild { get; set; }
 
-        public Node(object value)
+        public Node(int value, Node leftChild, Node rightChild)
         {
             Value = value;
+            LeftChild = leftChild;
+            RightChild = rightChild;
         }
     }
 }
