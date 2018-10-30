@@ -48,20 +48,20 @@ namespace FizzBuzzTree
         {
             if (node.Value % 15 == 0)
             {
-                return "FizzBuzz";
+                return $"{node.Value}, FizzBuzz";
             }
             else if (node.Value % 5 == 0)
             {
-                return "Buzz";
+                return $"{node.Value}, Buzz";
             }
             else if (node.Value % 3 == 0)
             {
-                return "Fizz";
+                return $"{node.Value}, Fizz";
             }
             else
             {
                 return $"{node.Value}";
-             }
+            }
         }
     }
 }
