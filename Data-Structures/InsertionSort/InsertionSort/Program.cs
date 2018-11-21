@@ -6,10 +6,28 @@ namespace InsertionSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
+            Console.WriteLine("Insertion Sort");
 
-        static void InserstionSort(int[] myArray)
+            int[] unsortedArray = new int[] { 1, 10, 2, 9, 3, 8, 4, 6, 5 };
+            Console.WriteLine("Unsorted Array");
+            foreach (int item in unsortedArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            int[] sortedArray = InserstionSort(unsortedArray);
+            Console.WriteLine("Sorted Array");
+            foreach (int item in sortedArray)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+        /// <summary>
+        /// Iterates and sorts array using thr insertion sort algorithm
+        /// </summary>
+        /// <param name="myArray"></param>
+        static int[] InserstionSort(int[] myArray)
         {
             /*
              * Algorithm:
@@ -39,6 +57,8 @@ namespace InsertionSort
 
                 myArray[j + 1] = temp;
             }
+
+            return myArray;
         }
     }
 }
