@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HashTables.Classes
 {
-    class HashTable
+    public class HashTable
     {
         /// <summary>
         /// Table with 1024 positions
@@ -30,7 +30,7 @@ namespace HashTables.Classes
         }
 
         /// <summary>
-        /// Finds the Key within Table
+        /// Finds the key's value within the Table
         /// </summary>
         /// <param name="key"></param>
         /// <returns>Paired Value</returns>
@@ -44,7 +44,7 @@ namespace HashTables.Classes
             {
                 if ((string)Table[HashIndex].Current.Key == key)
                 {
-                    return $"{(string)Table[HashIndex].Current.Key}: {(string)Table[HashIndex].Current.Value}";
+                    return $"{(string)Table[HashIndex].Current.Value}";
                 }
             }
 
