@@ -2,6 +2,7 @@
 
 ## Description/Implementation
 Sorts arrays of integers using the folloing algorithms:
+
 (1) Insertion
 
 ## Big O
