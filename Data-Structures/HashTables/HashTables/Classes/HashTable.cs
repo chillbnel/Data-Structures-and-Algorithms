@@ -22,18 +22,40 @@ namespace HashTables.Classes
 
             foreach (char item in key)
             {
-                HashIndex = HashIndex + (int)item;
+                HashIndex = HashIndex + item;
             }
-            HashIndex = (HashIndex * 599) / Table.Length;
+            HashIndex = (HashIndex * 599) % Table.Length;
 
             return HashIndex;
+        }
+
+        /// <summary>
+        /// Finds the Key within Table
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>Paired Value</returns>
+        public string Find(string key)
+        {
+            int HashIndex = GetHash(key);
+
+            Table[HashIndex].Current = Table[HashIndex].Head;
+
+            while (Table[HashIndex].Current != null)
+            {
+                if ((string)Table[HashIndex].Current.Key == key)
+                {
+                    return $"{(string)Table[HashIndex].Current.Key}: {(string)Table[HashIndex].Current.Value}";
+                }
+            }
+
+            return null;
         }
 
         /// <summary>
         /// Checks to see if the Hash table contains the key
         /// </summary>
         /// <param name="key">Key to be checked</param>
-        /// <returns></returns>
+        /// <returns>Bool; true if table contains key, false if it doesn't</returns>
         public bool Contains(string key)
         {
             bool NotInHashTable = false;
@@ -55,8 +77,10 @@ namespace HashTables.Classes
                 Table[HashIndex].Current = Table[HashIndex].Next;
 
             }
+
             return NotInHashTable;
         }
+
         /// <summary>
         /// Adds key/value pair to the HashTable
         /// </summary>
@@ -64,11 +88,17 @@ namespace HashTables.Classes
         /// <param name="value"></param>
         public void Add(string key, string value)
         {
-            int index = GetHash(key);
+            int hashIndex = GetHash(key);
             Node node = new Node(key, value);
 
-            if(Cont)
-
+            if (Contains(key))
+            {
+                Table[hashIndex].Append(node);
+            }
+            else
+            {
+                Table[hashIndex] = new LinkedList(node);
+            }
         }
     }
 }

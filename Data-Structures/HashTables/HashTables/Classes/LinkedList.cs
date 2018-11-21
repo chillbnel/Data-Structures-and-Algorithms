@@ -15,6 +15,7 @@ namespace HashTables.Classes
         /// Current: This is used to transverse the LList
         /// </summary>
         public Node Current { get; set; }
+        public Node Next { get; internal set; }
 
         /// <summary>
         /// LList requires a node at the time of creation to be the HEAD
