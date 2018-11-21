@@ -6,27 +6,43 @@ namespace InsertionSort
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Insertion Sort");
+            Console.WriteLine("--------Insertion Sort--------");
 
-            int[] unsortedArray = new int[] { 1, 10, 2, 9, 3, 8, 4, 6, 5 };
+            int[] unsortedArrayInsertion = new int[] { 1, 10, 2, 9, 3, 8, 4, 6, 5 };
             Console.WriteLine("Unsorted Array");
-            foreach (int item in unsortedArray)
+            foreach (int item in unsortedArrayInsertion)
             {
                 Console.WriteLine(item);
             }
 
-            int[] sortedArray = InserstionSort(unsortedArray);
+            int[] sortedArrayInsertion = InserstionSort(unsortedArrayInsertion);
             Console.WriteLine("Sorted Array");
-            foreach (int item in sortedArray)
+            foreach (int item in sortedArrayInsertion)
             {
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine("--------Quick Sort--------");
+
+            int[] unsortedArrayQuick = new int[] { 1, 10, 2, 9, 3, 8, 4, 6, 5 };
+            Console.WriteLine("Unsorted Array");
+            foreach (int item in unsortedArrayQuick)
+            {
+                Console.WriteLine(item);
+            }
+
+            int[] sortedArrayQuick = QuickSort(unsortedArrayQuick, 0, unsortedArrayQuick.Length-1);
+            Console.WriteLine("Sorted Array");
+            foreach (int item in sortedArrayQuick)
+            {
+                Console.WriteLine(item);
+            }
         }
+
         /// <summary>
         /// Iterates and sorts array using thr insertion sort algorithm
         /// </summary>
-        /// <param name="myArray"></param>
+        /// <param name="myArray">Sorted array</param>
         static int[] InserstionSort(int[] myArray)
         {
             /*
@@ -59,6 +75,68 @@ namespace InsertionSort
             }
 
             return myArray;
+        }
+
+        /// <summary>
+        /// Iterates and sorts array using the quick sort algorithm
+        /// </summary>
+        /// <param name="myArray">Sorted array</param>
+        static int[] QuickSort(int[] myArray, int left, int right)
+        {
+            if (left < right)
+            {
+                // Partition the Algorithm
+                int position = Partition(myArray, left, right);
+                // Sort the left
+                QuickSort(myArray, left, position - 1);
+                // Sort the right
+                QuickSort(myArray, position + 1, right);
+            }
+
+            return myArray;
+        }
+
+        /// <summary>
+        /// Partitions the array to be quick sorted
+        /// </summary>
+        /// <param name="arr">Array being sorted</param>
+        /// <param name="left">Left boundry</param>
+        /// <param name="right">Right boundry</param>
+        /// <returns>Lowest Value</returns>
+        static int Partition(int[] arr, int left, int right)
+        {
+            // set a pivot
+            int pivot = arr[right];
+            // get the index of the lower value
+            int low = left - 1;
+
+            for (int i = left; i < right; i++)
+            {
+                if (arr[i] <= pivot)
+                {
+                    low++;
+                    Swap(arr, i, low);
+                }
+
+            }
+
+            Swap(arr, right, low + 1);
+
+            return low + 1;
+        }
+
+        /// <summary>
+        /// Swaps the current value in the array with the lowest value
+        /// </summary>
+        /// <param name="arr">Array being sorted</param>
+        /// <param name="i">Current array index</param>
+        /// <param name="low">Lowest array index</param>
+        static void Swap(int[] arr, int i, int low)
+        {
+            int temp;
+            temp = arr[i];
+            arr[i] = arr[low];
+            arr[low] = temp;
         }
     }
 }
