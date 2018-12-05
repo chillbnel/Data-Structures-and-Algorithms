@@ -42,5 +42,23 @@ namespace Graph2.Classes
             value.Add(new Tuple<Node, int>(parent, child.Item2));
 
         }
+
+        /// <summary>
+        /// Creates a list off all nodes in the in the graph
+        /// </summary>
+        /// <returns>List of nodes</returns>
+        public List<Node> GetNodes()
+        {
+            List<Node> nodes = new List<Node>();
+            foreach(var node in AdjacencyList)
+            {
+                if(node.Key != null)
+                {
+                    nodes.Add(node.Key);
+                }
+            }
+
+            return nodes;
+        }
     }
 }
