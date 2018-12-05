@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Graph2.Classes
 {
-    class Graph
+    public class Graph
     {
         public Dictionary<Node, List<Tuple<Node, int>>> AdjacencyList { get; set; }
 
@@ -16,6 +16,11 @@ namespace Graph2.Classes
             AdjacencyList.Add(vertex, neighbors);
         }
 
+        /// <summary>
+        /// Adds an edge to the graph
+        /// </summary>
+        /// <param name="parent">The parent/first node/vertex</param>
+        /// <param name="child">The child/end node/vertex</param>
         public void AddAnEdge(Node parent, Tuple<Node, int> child)
         {
             if (!AdjacencyList.ContainsKey(parent))

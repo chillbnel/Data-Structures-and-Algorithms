@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Graph2.Classes
 {
-    class Node
+    public class Node
     {
         public string Value { get; set; }
 
