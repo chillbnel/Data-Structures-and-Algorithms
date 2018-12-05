@@ -73,5 +73,6 @@ namespace Graph2.Classes
 
             return nodeNeighbors;
         }
+
     }
 }

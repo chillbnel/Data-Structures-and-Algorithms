@@ -47,5 +47,25 @@ namespace XUnitTestProject1
 
             Assert.NotEmpty(testGraph.GetNodes());
         }
+        /// <summary>
+        /// Validates that GetVertexNeighbors retrieves all neighbors
+        /// </summary>
+        [Fact]
+        public void AllNeighborsRecieved()
+        {
+            Node node1 = new Graph2.Classes.Node("node1");
+            Node node2 = new Graph2.Classes.Node("node2");
+            Node node3 = new Graph2.Classes.Node("node3");
+            Node node4 = new Graph2.Classes.Node("node4");
+
+            Graph testGraph = new Graph(node1);
+
+            testGraph.AddAnEdge(node1, new Tuple<Node, int>(node2, 2));
+            testGraph.AddAnEdge(node2, new Tuple<Node, int>(node3, 3));
+            testGraph.AddAnEdge(node3, new Tuple<Node, int>(node4, 4));
+            testGraph.AddAnEdge(node4, new Tuple<Node, int>(node1, 1));
+
+            Assert.NotEmpty(testGraph.GetVertexNeighbors(node2));
+        }
     }
 }
