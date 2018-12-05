@@ -60,5 +60,18 @@ namespace Graph2.Classes
 
             return nodes;
         }
+
+        public List<Node> GetVertexNeighbors(Node vertex)
+        {
+            List<Node> nodeNeighbors = new List<Node>();
+            var value = AdjacencyList.GetValueOrDefault(vertex);
+
+            foreach(var node in value)
+            {
+                nodeNeighbors.Add(node.Item1);
+            }
+
+            return nodeNeighbors;
+        }
     }
 }
