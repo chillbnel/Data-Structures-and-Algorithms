@@ -61,7 +61,12 @@ namespace Graph2.Classes
             return nodes;
         }
 
-        public List<Node> GetVertexNeighbors(Node vertex)
+        /// <summary>
+        /// Retrieves all neighbors to a target node within a graph
+        /// </summary>
+        /// <param name="vertex">The graph vertex</param>
+        /// <returns>List of neighbor nodes</returns>
+        public List<Node> GetNodeNeighbors(Node vertex)
         {
             List<Node> nodeNeighbors = new List<Node>();
             var value = AdjacencyList.GetValueOrDefault(vertex);
@@ -73,6 +78,13 @@ namespace Graph2.Classes
 
             return nodeNeighbors;
         }
-
+        /// <summary>
+        /// Determines the size of the graph and returns it
+        /// </summary>
+        /// <returns>Graph size</returns>
+        public int GraphSize()
+        {
+            return AdjacencyList.Count;
+        }
     }
 }
