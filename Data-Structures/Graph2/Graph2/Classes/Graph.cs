@@ -21,7 +21,7 @@ namespace Graph2.Classes
         /// </summary>
         /// <param name="parent">The parent/first node/vertex</param>
         /// <param name="child">The child/end node/vertex</param>
-        public void AddAnEdge(Node parent, Tuple<Node, int> child)
+        public void AddEdge(Node parent, Tuple<Node, int> child)
         {
             if (!AdjacencyList.ContainsKey(parent))
             {
@@ -66,7 +66,7 @@ namespace Graph2.Classes
         /// </summary>
         /// <param name="vertex">The graph vertex</param>
         /// <returns>List of neighbor nodes</returns>
-        public List<Node> GetNodeNeighbors(Node vertex)
+        public List<Node> GetNeighbors(Node vertex)
         {
             List<Node> nodeNeighbors = new List<Node>();
             var value = AdjacencyList.GetValueOrDefault(vertex);
@@ -82,7 +82,7 @@ namespace Graph2.Classes
         /// Determines the size of the graph and returns it
         /// </summary>
         /// <returns>Graph size</returns>
-        public int GraphSize()
+        public int Size()
         {
             return AdjacencyList.Count;
         }

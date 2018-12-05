@@ -19,10 +19,10 @@ namespace XUnitTestProject1
 
             Graph testGraph = new Graph(node1);
 
-            testGraph.AddAnEdge(node1, new Tuple<Node, int>(node2, 2));
-            testGraph.AddAnEdge(node2, new Tuple<Node, int>(node3, 3));
-            testGraph.AddAnEdge(node3, new Tuple<Node, int>(node4, 4));
-            testGraph.AddAnEdge(node4, new Tuple<Node, int>(node1, 1));
+            testGraph.AddEdge(node1, new Tuple<Node, int>(node2, 2));
+            testGraph.AddEdge(node2, new Tuple<Node, int>(node3, 3));
+            testGraph.AddEdge(node3, new Tuple<Node, int>(node4, 4));
+            testGraph.AddEdge(node4, new Tuple<Node, int>(node1, 1));
 
             Assert.NotEmpty(testGraph.GetNodes());
         }
@@ -40,15 +40,15 @@ namespace XUnitTestProject1
 
             Graph testGraph = new Graph(node1);
 
-            testGraph.AddAnEdge(node1, new Tuple<Node, int>(node2, 2));
-            testGraph.AddAnEdge(node2, new Tuple<Node, int>(node3, 3));
-            testGraph.AddAnEdge(node3, new Tuple<Node, int>(node4, 4));
-            testGraph.AddAnEdge(node4, new Tuple<Node, int>(node1, 1));
+            testGraph.AddEdge(node1, new Tuple<Node, int>(node2, 2));
+            testGraph.AddEdge(node2, new Tuple<Node, int>(node3, 3));
+            testGraph.AddEdge(node3, new Tuple<Node, int>(node4, 4));
+            testGraph.AddEdge(node4, new Tuple<Node, int>(node1, 1));
 
             Assert.NotEmpty(testGraph.GetNodes());
         }
         /// <summary>
-        /// Validates that GetNodeNeighbors retrieves all of the target node's neighbors
+        /// Validates that GetNeighbors retrieves all of the target node's neighbors
         /// </summary>
         [Fact]
         public void AllNeighborsRecieved()
@@ -60,12 +60,33 @@ namespace XUnitTestProject1
 
             Graph testGraph = new Graph(node1);
 
-            testGraph.AddAnEdge(node1, new Tuple<Node, int>(node2, 2));
-            testGraph.AddAnEdge(node2, new Tuple<Node, int>(node3, 3));
-            testGraph.AddAnEdge(node3, new Tuple<Node, int>(node4, 4));
-            testGraph.AddAnEdge(node4, new Tuple<Node, int>(node1, 1));
+            testGraph.AddEdge(node1, new Tuple<Node, int>(node2, 2));
+            testGraph.AddEdge(node2, new Tuple<Node, int>(node3, 3));
+            testGraph.AddEdge(node3, new Tuple<Node, int>(node4, 4));
+            testGraph.AddEdge(node4, new Tuple<Node, int>(node1, 1));
 
-            Assert.NotEmpty(testGraph.GetNodeNeighbors(node2));
+            Assert.NotEmpty(testGraph.GetNeighbors(node2));
+        }
+
+        /// <summary>
+        /// Validates that the Size method correctly returns the graph size
+        /// </summary>
+        [Fact]
+        public void GraphSizeRecieved()
+        {
+            Node node1 = new Graph2.Classes.Node("node1");
+            Node node2 = new Graph2.Classes.Node("node2");
+            Node node3 = new Graph2.Classes.Node("node3");
+            Node node4 = new Graph2.Classes.Node("node4");
+
+            Graph testGraph = new Graph(node1);
+
+            testGraph.AddEdge(node1, new Tuple<Node, int>(node2, 2));
+            testGraph.AddEdge(node2, new Tuple<Node, int>(node3, 3));
+            testGraph.AddEdge(node3, new Tuple<Node, int>(node4, 4));
+            testGraph.AddEdge(node4, new Tuple<Node, int>(node1, 1));
+
+            Assert.Equal(4, testGraph.Size());
         }
     }
 }
